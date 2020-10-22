@@ -33,7 +33,7 @@ endpoint = <<"https://fcm.googleapis.com/fcm/send/fiKSpaSo0TA:APA91bEkdUO6ncb45r
 p256dh = <<"BH0mbVKNm1yeSYvtkNdp-eMFSXj9z42g5KmTcja22E7vwR7rrvudpVfpPzffx6Pf1c6CZiFc-B7VfwhcRUtBD14">>, 
 auth = <<"mkMQoKf4cd3o_Ysl2YubGA">>
                            },                           
-Payload= #{ title => <<"hello title">>, body => <<"cbody content">> } ,   
+Payload= #{ msg => <<"hello world">> } , 
 
 mqttchat_fcm:sync_push(mqttchat, Subscription, Payload).      
 
