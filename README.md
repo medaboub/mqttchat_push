@@ -1,5 +1,5 @@
 # mqttchat_fcm
-Erlang : Sending Push FCM Notification with VAPID keys and payload encryption.
+Erlang : Sending Push Notifications with VAPID keys and payload encryption.
 
 
 ## Generate PEM private key using openssl
