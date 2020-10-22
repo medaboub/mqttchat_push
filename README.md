@@ -61,8 +61,43 @@ mqttchat_fcm:sync_push(mqttchat, Subscription, Payload).
 
 ```
 
+#### Debug  
+Request sample : 
+```
+{"https://updates.push.services.mozilla.com/wpush/v2/gAAAAABfj0dKYDPn8AzRi_7wjP3YbquNR3sXrmm_noliPkXuCbqLezKkdHjPZ00iZrLmfrl-D7eRlTT8_IRYANsW2jE8Zv1g1iRp1_Ch5RJAPeF9RfVbnORmyUFOM2qCB6PeWPrMQQDhYuocWIrD5JzSHOdJe8yj8-OEH07j-64fSTeKOSxZrDw",[{"Authorization","WebPush eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL3VwZGF0ZXMucHVzaC5zZXJ2aWNlcy5tb3ppbGxhLmNvbSIsImV4cCI6MTYwMzQwMDQwNiwic3ViIjoibWFpbHRvOiBtcXR0Y2hhdEBtcXR0LWNoYXQuY29tIn0.qIRJlFzkvJ0ZK0Gzp4ZvVb_xU2Nn8Q0H1x0Pe7ft5DWJupvCAmitJhhz2FwkcJO0FqnYoK7ZTvk8_Ox6MMS98A"},{"Crypto-Key","p256ecdsa=BKrtcEpg-FfmUYvX2wbdWLupsLDRR_hNOBPjKht_5UlQ8MkbYc8-O-_XLyqijlNvuZTkTj3bpMutYot5KU02pys;dh=BBJUSxkBFgwaB0uMWQQQYzP8Gs22W67ImETqulNaj8uFO__ti0IhvbO_utN5eEdQoX2XyOzrQwTNUfxUkH1Az9o"},{"Encryption","salt=UcHWgsQ5BSs3p2I40dRZWw"},{"Content-Encoding","aesgcm"},{"TTL","60"}],"Content-Type: application/octet-stream",<<205,220,20,215,56,225,199,194,146,221,26,126,102,53,151,251,90,170,0,163,73,248,68,96,254,115,113,167,82,69,117,169,84,110,39,239,161,202,214,148,216,12,60,41,21,82,45,39,139,109,92,137,187,213,56,121,31,85,19,34,173>>}
+
+```
+Response :
+```
+{ok,{{"HTTP/1.1",201,"Created"},
+     [{"connection","keep-alive"},
+      {"date","Thu, 22 Oct 2020 20:00:31 GMT"},
+      {"location",
+       "https://updates.push.services.mozilla.com/m/gAAAAABfkeTf9A6mpbKzVPlhtnpSqk7nz2qaOu1MDRgwSbK3e7CYPLtQlDN9g9eBsD0RTgPYWUGUpdHkedF4T7M7jTj3OJX-kI46q8d6kINrn1YXBwRJIpVuvf6L41MH23R_EyOin9hiDFyZyYH99bTJmWZ--TJS_g0Ev4iUoa8aoOnWGNMxssRHKWOM_tet_x1G6B3qek1m"},
+      {"server","nginx"},
+      {"content-length","0"},
+      {"content-type","text/html; charset=UTF-8"},
+      {"access-control-allow-headers",
+       "content-encoding,encryption,crypto-key,ttl,encryption-key,content-type,authorization"},
+      {"access-control-allow-methods","POST"},
+      {"access-control-allow-origin","*"},
+      {"access-control-expose-headers",
+       "location,www-authenticate"},
+      {"strict-transport-security",
+       "max-age=31536000;includeSubDomains"},
+      {"ttl","60"}],
+     <<>>}}
+
+```
+
 ## Get Application public and private VAPID keys
 ``` erlang
 mqttchat_fcm:vapid_keys(mqttchat).
+```
+
+### sample
+```
+{<<"BKrtcEpg-FfmUYvX2wbdWLupsLDRR_hNOBPjKht_5UlQ8MkbYc8-O-_XLyqijlNvuZTkTj3bpMutYot5KU02pys">>,
+ <<"HIDDEN">>}
 
 ```
