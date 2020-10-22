@@ -6,7 +6,7 @@ Erlang : Sending Push Notifications with VAPID keys and payload encryption.
 ```
 $ openssl ecparam -genkey -name prime256v1 -out private_key.pem
 ```
-## Start Mqttchat_fcm with prime256v1 PemPrivateKey
+## Start Mqttchat_fcm with PemPrivateKey
 ``` erlang
 {ok, PrivPem} = file:read_file("/home/keys/rivate_key.pem"),
 mqttchat_fcm:start(mqttchat, PrivPem).
