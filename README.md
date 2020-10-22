@@ -39,7 +39,7 @@ mqttchat_fcm:sync_push(mqttchat, Subscription, Payload).
 
 ```
 
-## Get Application VAPID keys
+## Get Application public and private VAPID keys
 ``` erlang
 mqttchat_fcm:vapid_keys(mqttchat).
 
