@@ -1,0 +1,17 @@
+{application, mqttchat_push,
+ [{description, "Sending Web Push Notifications with VAPID keys and payload encryption."},
+  {vsn, "0.1.0"},
+  {registered, [mqttchat_push_sup]},
+  {mod, { mqttchat_push_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    ssl,
+    inets   
+   ]},
+  {env,[]},
+  {modules, []},
+  {maintainers, []},
+  {licenses, []},
+  {links, []}
+ ]}.

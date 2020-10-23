@@ -1,0 +1,12 @@
+[{<<"base64url">>,
+  {git,"https://github.com/dvv/base64url.git",
+       {ref,"f2c64ed8b9bebc536fad37ad97243452b674b837"}},
+  1},
+ {<<"jose">>,
+  {git,"git://github.com/manifest/jose-erlang.git",
+       {ref,"9541a477eea6c4312ff0734b426e7ac7e3f658de"}},
+  0},
+ {<<"jsx">>,
+  {git,"https://github.com/talentdeficit/jsx.git",
+       {ref,"d4b6d3dc5fd9e759ff7a0c476654ea5124f5bae9"}},
+  1}].
