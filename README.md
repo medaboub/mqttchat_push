@@ -8,7 +8,7 @@ $ openssl ecparam -genkey -name prime256v1 -out private_key.pem
 ```
 ## Start Mqttchat_fcm with PemPrivateKey
 ``` erlang
-{ok, PrivPem} = file:read_file("/home/keys/rivate_key.pem"),
+{ok, PrivPem} = file:read_file("/home/keys/private_key.pem"),
 mqttchat_push:start(mqttchat, PrivPem).
 
 ```
