@@ -85,7 +85,7 @@ Response :
      <<>>}}
 
 ```
-## Send Async push notification 
+## Send A1sync push notification 
 ``` erlang
 Subscription= #subscription{
 endpoint = <<"https://fcm.googleapis.com/fcm/send/fiKSpaSo0TA:APA91bEkdUO6ncb45rCLNljjPxjlI1uRoLNyG2107kLSD3p6HTGPMuJodGHkrWKmbb8y9dK3Afi3Tvydil9fbgLBE64X7LPnqYzPHn2aEGwruKOdaQImehlDaX_4_1VbE6hYp6zqSio1">>,
