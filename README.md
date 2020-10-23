@@ -1,5 +1,5 @@
-# mqttchat_fcm
-Erlang : Sending Push Notifications with VAPID keys and payload encryption.
+# mqttchat_push
+Erlang : Sending Push Notifications with VAPID keys and Payload encryption.
 
 
 ## Generate PEM private key using openssl
@@ -9,7 +9,7 @@ $ openssl ecparam -genkey -name prime256v1 -out private_key.pem
 ## Start Mqttchat_fcm with PemPrivateKey
 ``` erlang
 {ok, PrivPem} = file:read_file("/home/keys/rivate_key.pem"),
-mqttchat_fcm:start(mqttchat, PrivPem).
+mqttchat_push:start(mqttchat, PrivPem).
 
 ```
 
@@ -22,7 +22,7 @@ auth = <<"mkMQoKf4cd3o_Ysl2YubGA">>
                            },                           
 Payload= #{ msg => <<"hello world">> } ,   
 
-mqttchat_fcm:sync_push(mqttchat, Subscription, Payload).      
+mqttchat_push:sync_push(mqttchat, Subscription, Payload).      
 
 ```
 
@@ -57,7 +57,7 @@ auth = <<"mkMQoKf4cd3o_Ysl2YubGA">>
                            },                           
 Payload= #{ msg => <<"hello world">> } , 
 
-mqttchat_fcm:sync_push(mqttchat, Subscription, Payload).      
+mqttchat_push:sync_push(mqttchat, Subscription, Payload).      
 
 ```
 
@@ -92,7 +92,7 @@ Response :
 
 ## Get Application public and private VAPID keys
 ``` erlang
-mqttchat_fcm:vapid_keys(mqttchat).
+mqttchat_push:vapid_keys(mqttchat).
 ```
 
 ### sample
