@@ -1,4 +1,4 @@
-mqttchat_fcm
+mqttchat_push
 =====
 
 An OTP application
@@ -86,7 +86,7 @@ Response :
       {"ttl","60"}],
      <<>>}}
 ```
-## Send A1sync push notification 
+## Send async push notification 
 ``` erlang
 Subscription= #subscription{
 endpoint = <<"https://fcm.googleapis.com/fcm/send/fiKSpaSo0TA:APA91bEkdUO6ncb45rCLNljjPxjlI1uRoLNyG2107kLSD3p6HTGPMuJodGHkrWKmbb8y9dK3Afi3Tvydil9fbgLBE64X7LPnqYzPHn2aEGwruKOdaQImehlDaX_4_1VbE6hYp6zqSio1">>,
@@ -98,7 +98,7 @@ Fun = fun(R) -> {_, HttpResp } = R,  erlang:display(HttpResp) end,
 mqttchat_push:async_push(mqttchat, Subscription, Payload,Fun ). 
 ```
 
-## Get Application public and private VAPID keys
+## Get application public and private VAPID keys
 ``` erlang
 mqttchat_push:vapid_keys(mqttchat).
 ```
