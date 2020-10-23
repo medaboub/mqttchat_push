@@ -85,6 +85,20 @@ Response :
      <<>>}}
 
 ```
+## Send Async push notification 
+``` erlang
+Subscription= #subscription{
+endpoint = <<"https://fcm.googleapis.com/fcm/send/fiKSpaSo0TA:APA91bEkdUO6ncb45rCLNljjPxjlI1uRoLNyG2107kLSD3p6HTGPMuJodGHkrWKmbb8y9dK3Afi3Tvydil9fbgLBE64X7LPnqYzPHn2aEGwruKOdaQImehlDaX_4_1VbE6hYp6zqSio1">>,
+p256dh = <<"BH0mbVKNm1yeSYvtkNdp-eMFSXj9z42g5KmTcja22E7vwR7rrvudpVfpPzffx6Pf1c6CZiFc-B7VfwhcRUtBD14">>, 
+auth = <<"mkMQoKf4cd3o_Ysl2YubGA">>
+                           },                           
+Payload= #{ msg => <<"hello world">> } ,   
+
+Fun = fun(R) -> {_, HttpResp } = R,  erlang:display(HttpResp) end,
+
+mqttchat_push:async_push(mqttchat, Subscription, Payload,Fun ). 
+
+```
 
 ## Get Application public and private VAPID keys
 ``` erlang
