@@ -50,15 +50,11 @@ Response :
 ## Sent encrypted notification to mozilla
 
 ``` erlang
-Subscription= #subscription{
-endpoint = <<"https://fcm.googleapis.com/fcm/send/fiKSpaSo0TA:APA91bEkdUO6ncb45rCLNljjPxjlI1uRoLNyG2107kLSD3p6HTGPMuJodGHkrWKmbb8y9dK3Afi3Tvydil9fbgLBE64X7LPnqYzPHn2aEGwruKOdaQImehlDaX_4_1VbE6hYp6zqSio1">>,
-p256dh = <<"BH0mbVKNm1yeSYvtkNdp-eMFSXj9z42g5KmTcja22E7vwR7rrvudpVfpPzffx6Pf1c6CZiFc-B7VfwhcRUtBD14">>, 
-auth = <<"mkMQoKf4cd3o_Ysl2YubGA">>
-                           },                           
-Payload= #{ msg => <<"hello world">> } , 
-
-mqttchat_push:sync_push(mqttchat, Subscription, Payload).      
-
+Subscription= #subscription{endpoint = <<"https://updates.push.services.mozilla.com/wpush/v2/gAAAAABfj0dKYDPn8AzRi_7wjP3YbquNR3sXrmm_noliPkXuCbqLezKkdHjPZ00iZrLmfrl-D7eRlTT8_IRYANsW2jE8Zv1g1iRp1_Ch5RJAPeF9RfVbnORmyUFOM2qCB6PeWPrMQQDhYuocWIrD5JzSHOdJe8yj8-OEH07j-64fSTeKOSxZrDw">>,
+                   p256dh = <<"BN2bWyK5_wYPOrJ7lbqnSR7aMIp1iKaNJZqzhxyLN_DckYYAHYJdzm2YP7tmWdbnEXFaDKsWl2Yh2Bej9nc5CXA">>, 
+                   auth = <<"ci58BkrM_7HnIeI_mOhVkw">>},
+    Payload= #{ msg => <<"hello word habibi">> } ,              
+    mqttchat_push:sync_push(mqttchat, Subscription, Payload).
 ```
 
 #### Debug  
