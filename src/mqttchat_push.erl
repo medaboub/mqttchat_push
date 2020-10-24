@@ -7,23 +7,13 @@
 -export([init/1, handle_call/3, handle_cast/2, handle_info/2,
          terminate/2, code_change/3]).
 
--export([sync_push/3,async_push/4, vapid_keys/1,testc/0]).
+-export([sync_push/3,async_push/4, vapid_keys/1]).
 
 -define(SERVER, ?MODULE).
 
 -include("include/records.hrl").
 
 
-testc()->
-    application:start(mqttchat_push),
-    {ok, PrivtPem} = file:read_file("/home/vernemq/plugins/mqttchat/keys/es_private_key.pem"),
-    mqttchat_push:start(mqttchat, PrivtPem),
-
-    Subscription= #subscription{endpoint = <<"https://fcm.googleapis.com/fcm/send/fiKSpaSo0TA:APA91bEkdUO6ncb45rCLNljjPxjlI1uRoLNyG2107kLSD3p6HTGPMuJodGHkrWKmbb8y9dK3Afi3Tvydil9fbgLBE64X7LPnqYzPHn2aEGwruKOdaQImehlDaX_4_1VbE6hYp6zqSio1">>,
-                   p256dh = <<"BH0mbVKNm1yeSYvtkNdp-eMFSXj9z42g5KmTcja22E7vwR7rrvudpVfpPzffx6Pf1c6CZiFc-B7VfwhcRUtBD14">>, 
-                   auth = <<"mkMQoKf4cd3o_Ysl2YubGA">>},
-    Payload= #{ title => <<"hello title">>, body => <<"cbody content">> } ,              
-    mqttchat_push:sync_push(mqttchat, Subscription, Payload).               
 
 
 -spec start(Name::atom(),PemPrivKey ::binary()) -> 
