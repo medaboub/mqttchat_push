@@ -24,7 +24,6 @@ jwt_data(EndPoint)->
 
 jwt_token(EndPoint,PemPrivateKey)->
    {<<"ES256">>, PrivateKey} = jose_pem:parse_key(PemPrivateKey),
-   erlang:display(PrivateKey),
    jose_jws_compact:encode(jwt_data(EndPoint),<<"ES256">>,PrivateKey).  
 
 
