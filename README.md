@@ -10,7 +10,7 @@ $ rebar3 compile
 
 ## Generate PEM private key using openssl
 ```
-openssl ecparam -name prime256v1 -genkey -noout -out es_private_key.pem   
+openssl ecparam -name prime256v1 -genkey -noout -out private_key.pem   
 ```
 ## Start Mqttchat_fcm with PemPrivateKey
 ``` erlang
