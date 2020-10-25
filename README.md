@@ -1,4 +1,4 @@
-1mqttchat_push
+mqttchat_push
 =====
 
 An OTP application
