@@ -54,10 +54,10 @@ Response :
 
 ``` erlang
 Subscription= #subscription{endpoint = <<"https://updates.push.services.mozilla.com/wpush/v2/gAAAAABfj0dKYDPn8AzRi_7wjP3YbquNR3sXrmm_noliPkXuCbqLezKkdHjPZ00iZrLmfrl-D7eRlTT8_IRYANsW2jE8Zv1g1iRp1_Ch5RJAPeF9RfVbnORmyUFOM2qCB6PeWPrMQQDhYuocWIrD5JzSHOdJe8yj8-OEH07j-64fSTeKOSxZrDw">>,
-                   p256dh = <<"BN2bWyK5_wYPOrJ7lbqnSR7aMIp1iKaNJZqzhxyLN_DckYYAHYJdzm2YP7tmWdbnEXFaDKsWl2Yh2Bej9nc5CXA">>, 
-                   auth = <<"ci58BkrM_7HnIeI_mOhVkw">>},
-    Payload= #{ msg => <<"hello word habibi">> } ,              
-    mqttchat_push:sync_push(mqttchat, Subscription, Payload).
+       p256dh = <<"BN2bWyK5_wYPOrJ7lbqnSR7aMIp1iKaNJZqzhxyLN_DckYYAHYJdzm2YP7tmWdbnEXFaDKsWl2Yh2Bej9nc5CXA">>, 
+       auth = <<"ci58BkrM_7HnIeI_mOhVkw">>},
+Payload= #{ msg => <<"hello word habibi">> } ,              
+mqttchat_push:sync_push(mqttchat, Subscription, Payload).
 ```
 
 #### Debug  
