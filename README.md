@@ -12,7 +12,7 @@ $ rebar3 compile
 ```
 openssl ecparam -name prime256v1 -genkey -noout -out private_key.pem   
 ```
-## Start Mqttchat_fcm with PemPrivateKey
+## Start Mqttchat_push with PemPrivateKey
 ``` erlang
 {ok, PrivPem} = file:read_file("/home/keys/private_key.pem"),
 mqttchat_push:start(mqttchat, PrivPem).
